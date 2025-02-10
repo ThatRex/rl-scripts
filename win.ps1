@@ -5,7 +5,10 @@ param(
 if (!$script) { $script = $env:s }
 
 $name = "Rex's Lab Scripts 4 Windows"
-$workDir = "$env:TEMP/$rl-scripts"
+$workDir = "$env:TEMP/rl-scripts"
+$powerShellExe = 'powershell'
+if (Get-Command pwsh -ErrorAction SilentlyContinue) { $powerShellExe = "pwsh" }
+
 
 $scriptUrls = @{
 #   "voicemeeter-no-crackle"  = "https://raw.githubusercontent.com/ThatRex/voicemeeter-no-crackle/main/voicemeeter-no-crackle.bat";
@@ -22,7 +25,7 @@ function DownloadAndExecuteScript([string]$url) {
     Set-Content -Path $scriptPath -Value $response
 
     if ($extension -eq ".ps1") {
-        powershell -ExecutionPolicy Bypass -File $scriptPath
+        Start-Process $powerShellExe "-ExecutionPolicy Bypass -File $scriptPath"
     }
     elseif ($extension -eq ".bat" -or $extension -eq ".cmd") {
         cmd /c $scriptPath
