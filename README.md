@@ -1,11 +1,7 @@
-# scripts.rexslab.com
+# Rex's Lab Scripts
 
-Scripts for \*.scripts.rexslab.com
-
-# Usage
-
-Past this into your windows terminal:
+Past this into your Windows (PowerShell) terminal:
 
 ```powershell
-irm "http://win.scripts.rexslab.com/" | iex
+irm "w.s.rxlb.cc" | iex
 ```
