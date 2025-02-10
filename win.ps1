@@ -2,7 +2,7 @@ param(
     [string]$script
 )
 
-if (!$script) { $script = $env:script }
+if (!$script) { $script = $env:s }
 
 $name = "Rex's Lab Scripts 4 Windows"
 $workDir = "$env:TEMP/$name"
@@ -73,4 +73,4 @@ else {
     Write-Host "Script not found"
 }
 
-$env:script = $null
+$env:s = $null
