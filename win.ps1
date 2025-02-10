@@ -5,7 +5,7 @@ param(
 if (!$script) { $script = $env:s }
 
 $name = "Rex's Lab Scripts 4 Windows"
-$workDir = "$env:TEMP/$name"
+$workDir = "$env:TEMP/$rl-scripts"
 
 $scriptUrls = @{
 #   "voicemeeter-no-crackle"  = "https://raw.githubusercontent.com/ThatRex/voicemeeter-no-crackle/main/voicemeeter-no-crackle.bat";
