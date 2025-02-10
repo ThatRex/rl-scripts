@@ -25,7 +25,7 @@ function DownloadAndExecuteScript([string]$url) {
     Set-Content -Path $scriptPath -Value $response
 
     if ($extension -eq ".ps1") {
-        Start-Process $powerShellExe "-ExecutionPolicy Bypass -File $scriptPath"
+        $powerShellExe -ExecutionPolicy Bypass -File $scriptPath
     }
     elseif ($extension -eq ".bat" -or $extension -eq ".cmd") {
         cmd /c $scriptPath
